@@ -22,7 +22,7 @@ class groovy (
   validate_string($version)
   validate_string($base_url)
 
-  $groovy_filename = "groovy-binary-${version}.zip"
+  $groovy_filename = "apache-groovy-binary-${version}.zip"
   $groovy_dir = "${target}/groovy-${version}"
 
   file { '/etc/profile.d/groovy.sh':
