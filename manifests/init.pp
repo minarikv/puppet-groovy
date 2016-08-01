@@ -22,7 +22,11 @@ class groovy (
   validate_string($version)
   validate_string($base_url)
 
-  $groovy_filename = "apache-groovy-binary-${version}.zip"
+  if $version =~ /^(1\.|2\.[0-3]\.|2.4.[0-3]).*/ {
+    $groovy_filename = "groovy-binary-${version}.zip"
+  } else {
+    $groovy_filename = "apache-groovy-binary-${version}.zip"
+  }
   $groovy_dir = "${target}/groovy-${version}"
 
   file { '/etc/profile.d/groovy.sh':
